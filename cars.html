@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental - Cars</title>
+    <link rel="stylesheet" href="cars.css">
+</head>
+<body>
+    <header>
+        <h1>Car Rental Service</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="cars.html">Cars</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="crud">
+        <h2>Available cars</h2>
+        <div class="car">
+            <img src="car1.jpg" alt="Car 1">
+            <h3>Toyota Camry</h3>
+            <p>Price: 50 € /day</p>
+            <button onclick="editCar()">Edit</button>
+            <button onclick="deleteCar()">Delete</button>
+        </div>
+
+    </section>
+    <section class="crud">
+        <div class="car">
+            <img src="car2.jpg" alt="Car 2">
+            <h3>BMW 5 Series</h3>
+            <p>Price: 100 € /day</p>
+            <button onclick="editCar()">Edit</button>
+            <button onclick="deleteCar()">Delete</button>
+        </div>
+        <section class="crud">
+            <div class="car">
+                <img src="car3.jpg" alt="Car 3">
+                <h3>Toyota Camry</h3>
+                <p>Price: 70 € /day</p>
+                <button onclick="editCar()">Edit</button>
+                <button onclick="deleteCar()">Delete</button>
+            </div>
+    
+        </section>
+    </section>
+    <footer>
+        <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
+    </footer>
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Edit Car</h2>
+            <form>
+                <label for="editCarName">Car Name:</label><br>
+                <input type="text" id="editCarName" name="editCarName" required><br>
+                <label for="editCarPrice">Price per Day:</label><br>
+                <input type="number" id="editCarPrice" name="editCarPrice" required><br><br>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function editCar() {
+            var modal = document.getElementById("editModal");
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("editModal");
+            modal.style.display = "none";
+        }
+
+        function deleteCar() {
+                        alert("Car deleted!");
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("editModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
