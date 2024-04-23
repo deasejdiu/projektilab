@@ -32,6 +32,7 @@ function CarRental() {
                         <li><a href="cars.html">Cars</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
+                        <li><button onClick={addCar}>Add Car</button></li>
                     </ul>
                 </nav>
             </header>

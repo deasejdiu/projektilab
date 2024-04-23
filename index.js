@@ -34,6 +34,7 @@ function CarRental() {
                     <h3>BMW 5 Series</h3>
                     <p>Starting at $100/day</p>
                 </div>
+
             </section>
 
             <footer>
