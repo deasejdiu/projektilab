@@ -1,5 +1,7 @@
+// App.js
+
 import React, { useState } from 'react';
-import './cars.css';
+import './App.css';
 
 function CarRental() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -22,17 +24,21 @@ function CarRental() {
         }
     }
 
+    const addCar = () => {
+        // Logic for adding a new car
+    }
+
     return (
         <div>
             <header>
                 <h1>Car Rental Service</h1>
                 <nav>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="cars.html">Cars</a></li>
+                        <li><a href="home-page.js">Home</a></li>
+                        <li><a href="cars.js">Cars</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><button onClick={addCar}>Add Car</button></li>
+                        <li><button onClick={editCar}>Add Car</button></li>
                     </ul>
                 </nav>
             </header>
@@ -72,4 +78,3 @@ function CarRental() {
 }
 
 export default CarRental;
-
