@@ -1,47 +1,38 @@
-import React from 'react';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React from "react";
+import SignUp from "./pages/SignUpPage";
+import Login from "./pages/LoginPage";
+import Home from "./pages/HomePage";
+import BookCars from "./pages/BookCarsPage";
+import Rent from "./pages/RentPage";
+import Profile from "./pages/ProfilePage";
+import Dashboard from "./pages/DashboardPage";
+import NotFound from "./pages/Page404";
+import LoadingSpinner from "./components/ui/loading-spinner";
+import useAuthentication from "./useAuthentication";
 
-function CarRental() {
-    return (
-        <div>
-            <header>
-                <h1>Car Rental Service</h1>
-                <nav>
-                    <ul>
-                        <li><a href="home-page.js">Home</a></li>
-                        <li><a href="cars.js">Cars</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </nav>
-            </header>
+function App() {
+  const { isLoggedIn, isLoading } = useAuthentication();
 
-            <section className="hero">
-                <h2>Welcome to our Car Rental Service</h2>
-                <p>Explore our wide range of vehicles for rent. From economy cars to luxury vehicles, we have it all!</p>
-                <a href="#" className="btn">Browse Cars</a>
-            </section>
+  if (isLoading) return <LoadingSpinner />;
 
-            <section className="featured-cars">
-                <h2>Featured Cars</h2>
-                <div className="car">
-                    <img src="car1.jpg" alt="Car 1" />
-                    <h3>Toyota Camry</h3>
-                    <p>Starting at $50/day</p>
-                </div>
-                <div className="car">
-                    <img src="car2.jpg" alt="Car 2" />
-                    <h3>BMW 5 Series</h3>
-                    <p>Starting at $100/day</p>
-                </div>
-
-            </section>
-
-            <footer>
-                <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
-            </footer>
-        </div>
-    );
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="home" element={<Home />} />
+        <Route path="signup" element={<SignUp />} />
+        <Route path="login" element={<Login />} />
+        <Route path="cars" element={<BookCars />} />
+        <Route path="cars/:id" element={<Rent />} />
+        <Route path="profile" element={<Profile />} />
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default CarRental;
+export default App;
+
+// {isLoggedIn ? <Home /> : <Login />}
