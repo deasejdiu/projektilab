@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import './App.css';
+import './index.css';
 
 function CarRental() {
     const [isModalOpen, setIsModalOpen] = useState(false);

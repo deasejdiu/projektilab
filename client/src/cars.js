@@ -1,80 +1,46 @@
-// App.js
-
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 
-function CarRental() {
-    const [isModalOpen, setIsModalOpen] = useState(false);
-
-    const editCar = () => {
-        setIsModalOpen(true);
-    }
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    }
-
-    const deleteCar = () => {
-        alert("Car deleted!");
-    }
-
-    const handleModalClose = (event) => {
-        if (event.target.id === "editModal") {
-            setIsModalOpen(false);
-        }
-    }
-
-    const addCar = () => {
-        // Logic for adding a new car
-    }
-
+function cars() {
     return (
         <div>
             <header>
                 <h1>Car Rental Service</h1>
                 <nav>
                     <ul>
-                        <li><a href="home-page.js">Home</a></li>
-                        <li><a href="cars.js">Cars</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/cars">Cars</a></li>
                         <li><a href="#">About Us</a></li>
                         <li><a href="#">Contact</a></li>
-                        <li><button onClick={editCar}>Add Car</button></li>
                     </ul>
                 </nav>
             </header>
 
-            <section className="crud">
-                <h2>Available cars</h2>
+            <section className="hero">
+                <h2>Welcome to our Car Rental Service</h2>
+                <p>Explore our wide range of vehicles for rent. From economy cars to luxury vehicles, we have it all!</p>
+                <a href="#" className="btn">Browse Cars</a>
+            </section>
+
+            <section className="featured-cars">
+                <h2>Featured Cars</h2>
                 <div className="car">
                     <img src="car1.jpg" alt="Car 1" />
                     <h3>Toyota Camry</h3>
-                    <p>Price: 50 € /day</p>
-                    <button onClick={editCar}>Edit</button>
-                    <button onClick={deleteCar}>Delete</button>
+                    <p>Starting at $50/day</p>
+                </div>
+                <div className="car">
+                    <img src="car2.jpg" alt="Car 2" />
+                    <h3>BMW 5 Series</h3>
+                    <p>Starting at $100/day</p>
                 </div>
             </section>
 
             <footer>
                 <p>&copy; 2024 Car Rental Service. All rights reserved.</p>
             </footer>
-
-            {isModalOpen && (
-                <div id="editModal" className="modal" onClick={handleModalClose}>
-                    <div className="modal-content">
-                        <span className="close" onClick={closeModal}>&times;</span>
-                        <h2>Edit Car</h2>
-                        <form>
-                            <label htmlFor="editCarName">Car Name:</label><br />
-                            <input type="text" id="editCarName" name="editCarName" required /><br />
-                            <label htmlFor="editCarPrice">Price per Day:</label><br />
-                            <input type="number" id="editCarPrice" name="editCarPrice" required /><br /><br />
-                            <button type="submit">Save Changes</button>
-                        </form>
-                    </div>
-                </div>
-            )}
         </div>
     );
 }
 
-export default CarRental;
+export default cars;
