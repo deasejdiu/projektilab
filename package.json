@@ -1,7 +1,7 @@
 {
   "name": "projekti-lab",
   "version": "1.0.0",
-  "description": "",
+  "description": "an app for managing cars better",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -13,5 +13,6 @@
   "dependencies": {
     "express": "^4.19.2",
     "server": "^1.0.39"
-  }
+  },
+  "devDependencies": {}
 }
