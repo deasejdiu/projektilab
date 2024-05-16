@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import './App.css'; // Import CSS file
 import AddUserForm from './components/AddUserForm';
 import UserList from './components/UserList';
-import DeleteUserButton from './components/DeleteUserButton';
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -16,6 +16,15 @@ const App = () => {
 
   const handleAddUser = (user) => {
     // Placeholder code for adding user to backend API
+    fetch('/api/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    })
+    .then(response => response.json())
+    .then(newUser => setUsers([...users, newUser])); // Assuming the backend returns the newly added user
   };
 
   const handleDeleteUser = (userId) => {
@@ -25,12 +34,22 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="container">
       <h1>User Management System</h1>
       <AddUserForm onAdd={handleAddUser} />
-      <UserList users={users} onDelete={handleDeleteUser} />
-      {/* Include DeleteUserButton component */}
-      <DeleteUserButton onDelete={handleDeleteUser} />
+      <div className="table-container">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <UserList users={users} onDelete={handleDeleteUser} />
+        </table>
+      </div>
     </div>
   );
 };

@@ -1,38 +1,39 @@
-.App {
-  text-align: center;
+/* App.css */
+
+/* Style for the container div */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style for table headings */
+.table th {
+  background-color: #f2f2f2;
+  padding: 10px;
+  text-align: left;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Style for table data cells */
+.table td {
+  border: 1px solid #ddd;
+  padding: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for table rows */
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for table row hover effect */
+.table tr:hover {
+  background-color: #e2e2e2;
 }
+
