@@ -1,6 +1,6 @@
 // userController.js
 
-const db = require('../db'); // Assuming you have a separate file for database connection
+const db = require('../../db'); 
 
 const userController = {
   getAllUsers: (req, res) => {
