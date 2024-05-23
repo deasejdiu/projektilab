@@ -30,7 +30,7 @@ const userController = {
   },
   createUser: (req, res) => {
     const { name, email } = req.body;
-    const sql = `INSERT INTO users (name, email) VALUES ('${name}', '${email}')`;
+    const sql = `INSERT INTO users (firstname, lastname,telephone, email,password) VALUES ('${name}', '${email}')`;
     db.query(sql, (err, result) => {
       if (err) {
         res.status(500).json({ error: err.message });

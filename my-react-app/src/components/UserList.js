@@ -1,4 +1,3 @@
-// UserList.js
 
 import React from 'react';
 

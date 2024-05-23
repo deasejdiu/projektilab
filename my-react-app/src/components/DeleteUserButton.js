@@ -1,4 +1,3 @@
-// DeleteUserButton.js
 
 import React from 'react';
 
